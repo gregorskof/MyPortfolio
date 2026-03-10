@@ -1,49 +1,1088 @@
 <!doctype html>
-<html data-beasties-container>
-  <head>
-    <meta charset="utf-8">
-    <title>About me - Gregor</title>
-    <base href="https://gregorskof.github.io/MyPortfolio/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>*{line-height:1.8;font-family:monospace;font-size:large;transition:all .3s ease;scroll-behavior:smooth}html,header,body,footer{padding:0;margin:0;overflow-x:hidden}header{display:flex;justify-content:space-evenly;position:fixed;top:0;width:100%;z-index:1;background-color:#0006!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 5px 5px #0004}header,footer,.mobileHeader{padding:5px 0;text-align:center;color:#32cd32;background-color:#222}.mobileHeader{display:none}ul{display:flex;gap:25px;justify-content:space-evenly;list-style-type:none}#navLink,li{color:#fff;text-decoration:none}#navLink:hover,li:hover{color:#32cd32;text-decoration:underline;text-shadow:0 0 5px limegreen;transform:translateY(-2px)}#navLink:active,li:active{color:gray;text-decoration:none;transform:translateY(0)}@media (max-width: 840px){header{display:grid;gap:0px}}@media (max-width: 760px){ul{width:75%;margin:auto}}@media (max-width: 640px){#navLink{font-size:medium}}@media (max-width: 550px){header{display:none}.mobileHeader{display:flex;flex-direction:column;font-size:larger;gap:5px}#navLink{font-size:larger}}</style><link rel="stylesheet" href="styles-DHKHKXPV.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-DHKHKXPV.css"></noscript></head>
-  <header>
-    <h1 id="title"><a href="index.html" style="text-decoration: none; color: limegreen; font-size: larger;">
-      MY PORTFOLIO
-    </a></h1>
-    <ul>
-      <li><a href="#webDevelopment" id="navLink">Web</a></li>
-      <li><a href="#winAppDevelopment" id="navLink">Windows apps</a></li>
-      <li><a href="#gameDevelopment" id="navLink">Games</a></li>
-      <li><a href="#mcProgramming" id="navLink">MC programming</a></li>
-      <li><a href="#otherExperiences" id="navLink">Other experiences</a></li>
-      <li><a href="#contact" id="navLink">Contact</a></li>
-    </ul>
-  </header>
-  <div class="mobileHeader">
-    <h1 id="title"><a href="index.html" style="text-decoration: none; color: limegreen; font-size: larger;">
-      MY PORTFOLIO
-    </a></h1>
-    <ul>
-      <div>
-        <li><a href="#webDevelopment" id="navLink">Web</a></li>
-        <li><a href="#winAppDevelopment" id="navLink">Windows apps</a></li>
-        <li><a href="#gameDevelopment" id="navLink">Games</a></li>
-      </div>
-      <div>
-        <li><a href="#mcProgramming" id="navLink">MC programming</a></li>
-        <li><a href="#otherExperiences" id="navLink">Other experiences</a></li>
-        <li><a href="#contact" id="navLink">Contact</a></li>
-      </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About me - Gregor</title>
+  <base href="https://gregorskof.github.io/MyPortfolio/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080b10;
+      --bg2: #0d1117;
+      --card: #111620;
+      --border: #1e2a3a;
+      --accent: #00e5ff;
+      --accent2: #7c3aed;
+      --accent3: #10b981;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --white: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      overflow-x: hidden;
+    }
+
+    /* NOISE TEXTURE OVERLAY */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* PAGE WRAPPER */
+    .page-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(8,11,16,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-logo .logo-accent { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,229,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,255,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black, transparent);
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero-glow2 {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0,229,255,0.08) 0%, transparent 70%);
+      bottom: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(0,229,255,0.08);
+      border: 1px solid rgba(0,229,255,0.2);
+      color: var(--accent);
+      padding: 0.35rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.6s 0.1s ease both;
+    }
+
+    .hero-title .line1 { color: var(--white); display: block; }
+    .hero-title .line2 {
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+      display: block;
+    }
+    .hero-title .line3 {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 520px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.6s 0.2s ease both;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.6s 0.3s ease both;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .btn-primary:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0,229,255,0.3);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.8rem 1.8rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.6s 0.4s ease both;
+    }
+
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .stat-num span { color: var(--accent); }
+    .stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.2rem; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 3rem;
+    }
+
+    /* AI UGC SECTION — FEATURED FIRST */
+    #aiUGC {
+      background: linear-gradient(135deg, rgba(124,58,237,0.05) 0%, rgba(0,229,255,0.03) 100%);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ai-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(124,58,237,0.2), rgba(0,229,255,0.1));
+      border: 1px solid rgba(124,58,237,0.4);
+      color: #a78bfa;
+      padding: 0.35rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .ai-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      line-height: 1.1;
+    }
+
+    .ai-title .highlight {
+      background: linear-gradient(90deg, #a78bfa, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .ai-desc {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+
+    .ai-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .ai-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text);
+    }
+
+    .ai-feature-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .ai-packages {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ai-package {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ai-package::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--accent2);
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .ai-package:hover { border-color: rgba(124,58,237,0.4); transform: translateX(4px); }
+    .ai-package:hover::before { opacity: 1; }
+
+    .ai-package.featured {
+      border-color: rgba(124,58,237,0.4);
+      background: linear-gradient(135deg, rgba(124,58,237,0.1), rgba(0,229,255,0.05));
+    }
+
+    .ai-package.featured::before { opacity: 1; }
+
+    .featured-badge {
+      position: absolute;
+      top: 0.75rem;
+      right: 0.75rem;
+      background: var(--accent2);
+      color: white;
+      font-size: 0.6rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .package-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .package-desc { font-size: 0.75rem; color: var(--muted); }
+
+    .package-price {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      color: var(--accent);
+      font-size: 1.25rem;
+      text-align: right;
+    }
+
+    .package-price small { display: block; font-size: 0.65rem; color: var(--muted); font-weight: 400; font-family: 'Space Mono', monospace; }
+
+    .tiktok-proof {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .tiktok-proof-title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .tiktok-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .tt-stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--white);
+    }
+
+    .tt-stat-num span { color: var(--accent); }
+    .tt-stat-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      overflow: hidden;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .card:hover {
+      border-color: rgba(0,229,255,0.2);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+
+    .card-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      filter: saturate(0.7) brightness(0.8);
+      transition: filter 0.3s;
+    }
+
+    .card:hover .card-img { filter: saturate(1) brightness(0.9); }
+
+    .card-body { padding: 1.5rem; }
+
+    .card-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .card-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; }
+
+    .card-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .skill-pill {
+      background: rgba(0,229,255,0.06);
+      border: 1px solid rgba(0,229,255,0.15);
+      color: var(--accent);
+      font-size: 0.65rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.25rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* OTHER EXPERIENCES */
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      padding: 1rem 1.25rem;
+      font-size: 0.8rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.2s;
+    }
+
+    .skill-item:hover {
+      border-color: rgba(0,229,255,0.2);
+      color: var(--white);
+    }
+
+    .skill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent3);
+      flex-shrink: 0;
+    }
+
+    /* CONTACT */
+    #contact {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .contact-intro {
+      font-family: 'Syne', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sub { font-size: 0.85rem; color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.8rem;
+      transition: color 0.2s;
+    }
+
+    .contact-link:hover { color: var(--accent); }
+    .contact-link-icon { width: 32px; height: 32px; background: var(--card); border: 1px solid var(--border); border-radius: 0.375rem; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+
+    .form-input, .form-textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      padding: 0.75rem 1rem;
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 0.8rem;
+      transition: border-color 0.2s;
+      outline: none;
+      resize: none;
+    }
+
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { min-height: 120px; }
+
+    .consent-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .consent-row input { margin-top: 3px; accent-color: var(--accent); }
+
+    /* FOOTER */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2rem 0;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    /* DIVIDER */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-inner { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .page-wrap { padding: 0 1.25rem; }
+      section { padding: 4rem 0; }
+      .hero { padding: 7rem 0 4rem; }
+      .ai-hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .footer-inner { flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+
+    /* SCROLL REVEAL */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">MY <span class="logo-accent">PORTFOLIO</span></a>
+    <ul class="nav-links">
+      <li><a href="#aiUGC">AI UGC</a></li>
+      <li><a href="#webDevelopment">Web</a></li>
+      <li><a href="#gameDevelopment">Games</a></li>
+      <li><a href="#mcProgramming">Arduino</a></li>
+      <li><a href="#otherExperiences">Other</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
-  <body>
-    <app-root></app-root>
-  <script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-2OC52SVK.js" type="module"></script></body>
-  <footer>
-    <p>
-      &copy; Made by Gregor <i>(Author)</i> - 2025<br>
-      All rights reserved!
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="page-wrap" style="width:100%; position:relative; z-index:1;">
+    <div class="hero-content">
+    <div class="hero-tag">Available for work</div>
+    <h1 class="hero-title">
+      <span class="line1">Gregor</span>
+      <span class="line2">The</span>
+      <span class="line3">Developer.</span>
+    </h1>
+    <p class="hero-desc">
+      Student developer from Slovenia.
+      I build websites, games, and AI-powered video ads —
+      the kind that stop the scroll.
+      Short-form content for TikTok, or standard ads for Google.
     </p>
-  </footer>
+    <div class="hero-ctas">
+      <a href="#aiUGC" class="btn-primary">AI UGC Ads</a>
+      <a href="#contact" class="btn-secondary">Get in Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">3<span>K+</span></div>
+        <div class="stat-label">TikTok Views / Week</div>
+      </div>
+      <div>
+        <div class="stat-num">5<span>+</span></div>
+        <div class="stat-label">Skills & Services</div>
+      </div>
+      <div>
+        <div class="stat-num">€<span>150</span></div>
+        <div class="stat-label">Starting Price</div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- AI UGC ADS — FEATURED -->
+<section id="aiUGC">
+  <div class="page-wrap">
+  <div class="ai-hero-grid">
+    <div class="reveal">
+      <div class="ai-badge">✦ New Service</div>
+      <h2 class="ai-title">
+        AI UGC Ads<br>
+        that <span class="highlight">actually sell</span>
+      </h2>
+      <p class="ai-desc">
+        I create short-form video ads using AI avatars, smart scripting, and motion control —
+        no real influencers needed. Brands get high-converting TikTok content in days, not weeks,
+        at a fraction of the cost.
+      </p>
+      <div class="ai-features">
+        <div class="ai-feature">
+          <div class="ai-feature-dot"></div>
+          <span>AI-generated avatars via Kling AI + Nano Banana Pro</span>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-dot"></div>
+          <span>Multiple hooks tested per video — find your winner fast</span>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-dot"></div>
+          <span>Full disclosure compliance for TikTok ad policies</span>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-dot"></div>
+          <span>Delivered as 9:16 vertical, ready to run</span>
+        </div>
+        <div class="ai-feature">
+          <div class="ai-feature-dot"></div>
+          <span>Works for skincare, apps, supplements, DTC brands</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn-primary">Get a Quote</a>
+    </div>
+
+    <div class="reveal">
+      <div class="ai-packages">
+        <div class="ai-package featured">
+          <div class="featured-badge">Popular</div>
+          <div>
+            <div class="package-name">Starter Pack</div>
+            <div class="package-desc">3 AI UGC videos, 2 hooks each</div>
+          </div>
+          <div class="package-price">
+            €150<br>(€50/video)
+            <small>one-time</small>
+          </div>
+        </div>
+        <div class="ai-package">
+          <div>
+            <div class="package-name">Pro Pack</div>
+            <div class="package-desc">6 videos, multiple angles tested</div>
+          </div>
+          <div class="package-price">
+            €250<br>(save €50)
+            <small>one-time</small>
+          </div>
+        </div>
+        <div class="ai-package">
+          <div class="featured-badge" style="background-color: #ee0000;">Best price</div>
+          <div>
+            <div class="package-name">Full Pack</div>
+            <div class="package-desc">10 videos, multiple angles tested</div>
+          </div>
+          <div class="package-price">
+            €400<br>(save €100)
+            <small>one-time</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="tiktok-proof reveal">
+        <div class="tiktok-proof-title">📱 Live on TikTok @grbi.ai</div>
+        <div class="tiktok-stats">
+          <div>
+            <div class="tt-stat-num">3<span>K+</span></div>
+            <div class="tt-stat-label">Views / Week</div>
+          </div>
+          <div>
+            <div class="tt-stat-num">95<span>%</span></div>
+            <div class="tt-stat-label">FYP Traffic</div>
+          </div>
+          <div>
+            <div class="tt-stat-num">750<span>+</span></div>
+            <div class="tt-stat-label">Best Video</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- WEB DEVELOPMENT -->
+<section id="webDevelopment">
+  <div class="page-wrap">
+  <div class="section-label">01</div>
+  <h2 class="section-title reveal">Web Development</h2>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <img src="./media/programming-MQKFFOQK.jpg" class="card-img" alt="Web Development">
+      <div class="card-body">
+        <div class="card-tag">Static & Dynamic</div>
+        <h3 class="card-title">Beautiful Websites</h3>
+        <p class="card-desc">I build beautiful static & dynamic websites. For static sites I use HTML, CSS & JavaScript. For dynamic web applications I have experience with Angular and other frameworks.</p>
+        <div class="card-skills">
+          <span class="skill-pill">HTML</span>
+          <span class="skill-pill">CSS</span>
+          <span class="skill-pill">JavaScript</span>
+          <span class="skill-pill">Angular</span>
+          <span class="skill-pill">CMS</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- GAME DEVELOPMENT -->
+<section id="gameDevelopment">
+  <div class="page-wrap">
+  <div class="section-label">02</div>
+  <h2 class="section-title reveal">Game Development</h2>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <img src="./media/game-FWIZBMIM.jpg" class="card-img" alt="Game Development">
+      <div class="card-body">
+        <div class="card-tag">Unity / C#</div>
+        <h3 class="card-title">Video Games</h3>
+        <p class="card-desc">I develop video games using Unity, which uses C#. I have already created a few games — check them out on my GitHub.</p>
+        <div class="card-skills">
+          <span class="skill-pill">Unity</span>
+          <span class="skill-pill">C#</span>
+          <span class="skill-pill">Game Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ARDUINO / MC PROGRAMMING -->
+<section id="mcProgramming">
+  <div class="page-wrap">
+  <div class="section-label">03</div>
+  <h2 class="section-title reveal">Microcontroller Programming</h2>
+  <div class="cards-grid">
+    <div class="card reveal">
+      <img src="./media/arduino bg IMAGE-UNBAAVBK.jpg" class="card-img" alt="Arduino">
+      <div class="card-body">
+        <div class="card-tag">Arduino / C++</div>
+        <h3 class="card-title">Arduino Projects</h3>
+        <p class="card-desc">I have experience programming microcontrollers. I've completed numerous simple projects using Arduino and enjoy working with hardware and embedded systems.</p>
+        <div class="card-skills">
+          <span class="skill-pill">Arduino</span>
+          <span class="skill-pill">C++</span>
+          <span class="skill-pill">Electronics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- OTHER EXPERIENCES -->
+<section id="otherExperiences">
+  <div class="page-wrap">
+  <div class="section-label">04</div>
+  <h2 class="section-title reveal">Other Experiences</h2>
+  <p class="card-desc reveal" style="max-width:560px; margin-bottom:2rem;">My other experiences include basic knowledge of various tools and technologies I've picked up along the way.</p>
+  <div class="skills-list reveal">
+    <div class="skill-item"><div class="skill-dot"></div>Python</div>
+    <div class="skill-item"><div class="skill-dot"></div>Git & GitHub</div>
+    <div class="skill-item"><div class="skill-dot"></div>AI Video Editing</div>
+    <div class="skill-item"><div class="skill-dot"></div>CapCut</div>
+    <div class="skill-item"><div class="skill-dot"></div>Canva</div>
+    <div class="skill-item"><div class="skill-dot"></div>Kling AI</div>
+    <div class="skill-item"><div class="skill-dot"></div>Nano Banana Pro</div>
+  </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="page-wrap">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="section-label">Contact</div>
+      <h2 class="contact-intro">Let's work<br>together.</h2>
+      <p class="contact-sub">Whether you need a website, a game, or AI UGC ads for your brand — I'm open to new projects.</p>
+      <div class="contact-links">
+        <a href="https://www.tiktok.com/@grbi.ai" class="contact-link" target="_blank">
+          <div class="contact-link-icon">📱</div>
+          @grbi.ai on TikTok
+        </a>
+        <a href="https://github.com/gregorskof" class="contact-link" target="_blank">
+          <div class="contact-link-icon">💻</div>
+          github.com/gregorskof
+        </a>
+      </div>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Name</label>
+          <input type="text" id="fieldName" class="form-input" placeholder="Your name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input type="email" id="fieldEmail" class="form-input" placeholder="your@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea id="fieldMessage" class="form-textarea" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <div class="consent-row">
+        <input type="checkbox" id="consent">
+        <label for="consent">I consent to sending my name, email, and message so I can be contacted. No data is stored on this website.</label>
+      </div>
+      <div id="formStatus" style="font-size:0.8rem; min-height:1.2em;"></div>
+      <button type="button" id="sendBtn" class="btn-primary" style="border:none; cursor:pointer; width:fit-content;" onclick="sendEmail()">Send Message</button>
+    </form>
+  </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <span>&copy; Made by Gregor Škof — 2025. All rights reserved.</span>
+    <a href="https://www.tiktok.com/@grbi.ai" target="_blank">@grbi.ai on TikTok</a>
+  </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  (function(){ emailjs.init({ publicKey: "s-bGjGm4phdaacwKn" }); })();
+
+  function sendEmail() {
+    const name = document.getElementById('fieldName').value.trim();
+    const email = document.getElementById('fieldEmail').value.trim();
+    const message = document.getElementById('fieldMessage').value.trim();
+    const consent = document.getElementById('consent').checked;
+    const status = document.getElementById('formStatus');
+
+    if (!consent) { status.style.color = '#f87171'; status.textContent = 'Please accept the consent checkbox.'; return; }
+    if (!name || !email || !message) { status.style.color = '#f87171'; status.textContent = 'All fields must be filled.'; return; }
+
+    const btn = document.getElementById('sendBtn');
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    status.textContent = '';
+
+    emailjs.send('service_r9xarxb', 'template_arpr27t', { name, email, message, privacyCheckBox: true })
+      .then(() => {
+        status.style.color = '#34d399';
+        status.textContent = 'Thank you for your message!';
+        document.getElementById('fieldName').value = '';
+        document.getElementById('fieldEmail').value = '';
+        document.getElementById('fieldMessage').value = '';
+        document.getElementById('consent').checked = false;
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      })
+      .catch(() => {
+        status.style.color = '#f87171';
+        status.textContent = 'Something went wrong. Please try again.';
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      });
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
 </html>
