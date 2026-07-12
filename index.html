@@ -6,8 +6,13 @@
     <meta name="description" content="Gregor Škof — an immersive 3D portfolio journey." />
     <link rel="icon" type="image/x-icon" href="./assets/favicon-DT2e6sLL.ico" />
     <title>Gregor Škof — Into the Work</title>
-    <script type="module" crossorigin src="./assets/index-vT4_2dVD.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-r2pQeQsf.css">
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light';
+      } catch (error) {}
+    </script>
+    <script type="module" crossorigin src="./assets/index-JXO1PSe5.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-YTk3raW9.css">
   </head>
   <body>
     <header class="topbar">
@@ -16,7 +21,12 @@
         <b>GREGOR ŠKOF</b>
       </a>
       <div class="topbar-center">PORTFOLIO JOURNEY / 2026</div>
-      <a class="contact-link" href="#contact">LET'S TALK <span>↘</span></a>
+      <div class="topbar-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+          <i aria-hidden="true"></i><span id="themeLabel">LIGHT</span>
+        </button>
+        <a class="contact-link" href="#contact">LET'S TALK <span>↘</span></a>
+      </div>
     </header>
 
     <main class="experience" id="top">
