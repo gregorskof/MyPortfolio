@@ -11,120 +11,127 @@
         if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light';
       } catch (error) {}
     </script>
-    <script type="module" crossorigin src="./assets/index-JXO1PSe5.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-YTk3raW9.css">
+    <script type="module" crossorigin src="./assets/index-BAZpYNgO.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D9o_eQiw.css">
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#top" aria-label="Return to the beginning">
+      <a class="brand" href="#top" aria-label="Return to the beginning" data-i18n-aria-label="aria.top">
         <span>GŠ</span>
         <b>GREGOR ŠKOF</b>
       </a>
-      <div class="topbar-center">PORTFOLIO JOURNEY / 2026</div>
+      <div class="topbar-center" data-i18n="header.journey">PORTFOLIO JOURNEY / 2026</div>
       <div class="topbar-actions">
+        <label class="language-control">
+          <span class="sr-only" data-i18n="language.label">Language</span>
+          <select id="languageSelect" aria-label="Select language" data-i18n-aria-label="language.select">
+            <option value="en">EN</option>
+            <option value="sl">SL</option>
+          </select>
+        </label>
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
           <i aria-hidden="true"></i><span id="themeLabel">LIGHT</span>
         </button>
-        <a class="contact-link" href="#contact">LET'S TALK <span>↘</span></a>
+        <a class="contact-link" href="#contact"><span data-i18n="header.contact">LET'S TALK</span> <span>↘</span></a>
       </div>
     </header>
 
     <main class="experience" id="top">
-      <canvas id="scene" aria-label="Scroll-driven 3D portfolio scenes"></canvas>
+      <canvas id="scene" aria-label="Scroll-driven 3D portfolio scenes" data-i18n-aria-label="aria.scene"></canvas>
       <div class="vignette" aria-hidden="true"></div>
       <div class="grain" aria-hidden="true"></div>
 
       <div class="chapter-wrap" aria-live="polite">
         <article class="chapter proof-chapter active" data-chapter="0">
-          <p class="chapter-index">01 / WEB DEVELOPMENT</p>
-          <h1>Ideas become<br /><em>interactive.</em></h1>
-          <p class="chapter-copy">Responsive websites and data-driven interfaces—designed, developed, and published as working products.</p>
+          <p class="chapter-index" data-i18n="web.index">01 / WEB DEVELOPMENT</p>
+          <h1 data-i18n-html="web.title">Ideas become<br /><em>interactive.</em></h1>
+          <p class="chapter-copy" data-i18n="web.copy">Responsive websites and data-driven interfaces—designed, developed, and published as working products.</p>
           <div class="chapter-tags"><span>HTML</span><span>CSS</span><span>JAVASCRIPT</span><span>ANGULAR</span></div>
           <div class="proof-grid" aria-label="Live web projects">
             <a class="proof-card" href="https://budilify.com/" target="_blank" rel="noreferrer">
-              <span class="proof-label">LIVE WEBSITE / 01</span>
+              <span class="proof-label" data-i18n="web.budilify.label">LIVE WEBSITE / 01</span>
               <strong>Budilify</strong>
-              <p>Brand website for handcrafted electronics and a custom-audio alarm clock.</p>
-              <i>OPEN PROJECT ↗</i>
+              <p data-i18n="web.budilify.copy">Brand website for handcrafted electronics and a custom-audio alarm clock.</p>
+              <i data-i18n="action.open">OPEN PROJECT ↗</i>
             </a>
             <a class="proof-card" href="https://gregorskof.github.io/weather-app/" target="_blank" rel="noreferrer">
-              <span class="proof-label">ANGULAR APP / 02</span>
+              <span class="proof-label" data-i18n="web.weather.label">ANGULAR APP / 02</span>
               <strong>Weather App</strong>
-              <p>Location search with live current-weather data, conditions, and temperature.</p>
-              <i>OPEN PROJECT ↗</i>
+              <p data-i18n="web.weather.copy">Location search with live current-weather data, conditions, and temperature.</p>
+              <i data-i18n="action.open">OPEN PROJECT ↗</i>
             </a>
             <a class="proof-card" href="http://gregorskof.atwebpages.com/" target="_blank" rel="noreferrer">
-              <span class="proof-label">COLLEGE PROJECT / 03</span>
-              <strong>Bootstrap Website</strong>
-              <p>An early college project created while learning responsive development with Bootstrap.</p>
-              <i>OPEN PROJECT ↗</i>
+              <span class="proof-label" data-i18n="web.bootstrap.label">COLLEGE PROJECT / 03</span>
+              <strong data-i18n="web.bootstrap.title">Bootstrap Website</strong>
+              <p data-i18n="web.bootstrap.copy">An early college project created while learning responsive development with Bootstrap.</p>
+              <i data-i18n="action.open">OPEN PROJECT ↗</i>
             </a>
             <a class="proof-card" href="https://techblogandnews.com/" target="_blank" rel="noreferrer">
-              <span class="proof-label">WORDPRESS / 04</span>
+              <span class="proof-label" data-i18n="web.tech.label">WORDPRESS / 04</span>
               <strong>Tech Blog &amp; News</strong>
-              <p>An earlier technology blog built with WordPress and the Nicepage website builder.</p>
-              <i>OPEN PROJECT ↗</i>
+              <p data-i18n="web.tech.copy">An earlier technology blog built with WordPress and the Nicepage website builder.</p>
+              <i data-i18n="action.open">OPEN PROJECT ↗</i>
             </a>
           </div>
         </article>
 
         <article class="chapter proof-chapter" data-chapter="1">
-          <p class="chapter-index">02 / GAME DEVELOPMENT</p>
-          <h2>Systems become<br /><em>play.</em></h2>
-          <p class="chapter-copy">Released indie games, prototypes, and experiments spanning Unity, C#, C++, 2D, and 3D development.</p>
+          <p class="chapter-index" data-i18n="games.index">02 / GAME DEVELOPMENT</p>
+          <h2 data-i18n-html="games.title">Systems become<br /><em>play.</em></h2>
+          <p class="chapter-copy" data-i18n="games.copy">Released indie games, prototypes, and experiments spanning Unity, C#, C++, 2D, and 3D development.</p>
           <div class="chapter-tags"><span>UNITY</span><span>C#</span><span>GAME DESIGN</span></div>
           <div class="proof-grid proof-grid-single" aria-label="Published game projects">
             <a class="proof-card" href="https://white-yogurt.itch.io/" target="_blank" rel="noreferrer">
-              <span class="proof-label">PUBLISHED WORK / ITCH.IO</span>
+              <span class="proof-label" data-i18n="games.label">PUBLISHED WORK / ITCH.IO</span>
               <strong>White Yogurt Games</strong>
-              <p>No One Outside, Pocket Plow, Collect &amp; Avoid, The Portal Campaign, and more.</p>
-              <i>VIEW ALL GAMES ↗</i>
+              <p data-i18n="games.projects">No One Outside, Pocket Plow, Collect &amp; Avoid, The Portal Campaign, and more.</p>
+              <i data-i18n="games.action">VIEW ALL GAMES ↗</i>
             </a>
           </div>
         </article>
 
         <article class="chapter proof-chapter" data-chapter="2">
-          <p class="chapter-index">03 / AR DEVELOPMENT</p>
-          <h2>Reality becomes<br /><em>layered.</em></h2>
-          <p class="chapter-copy">Released augmented-reality tools and game development that connect interactive 3D content with physical space.</p>
+          <p class="chapter-index" data-i18n="ar.index">03 / AR DEVELOPMENT</p>
+          <h2 data-i18n-html="ar.title">Reality becomes<br /><em>layered.</em></h2>
+          <p class="chapter-copy" data-i18n="ar.copy">Released augmented-reality tools and game development that connect interactive 3D content with physical space.</p>
           <div class="chapter-tags"><span>UNITY</span><span>AR FOUNDATION</span><span>INTERACTIVE 3D</span></div>
           <div class="proof-grid" aria-label="Augmented reality proof of work">
             <a class="proof-card" href="https://white-yogurt.itch.io/ar-tape-measure" target="_blank" rel="noreferrer">
-              <span class="proof-label">RELEASED ANDROID TOOL</span>
+              <span class="proof-label" data-i18n="ar.tape.label">RELEASED ANDROID TOOL</span>
               <strong>AR Tape Measure</strong>
-              <p>A downloadable utility for measuring real-world distances in augmented reality.</p>
-              <i>VIEW RELEASE ↗</i>
+              <p data-i18n="ar.tape.copy">A downloadable utility for measuring real-world distances in augmented reality.</p>
+              <i data-i18n="ar.tape.action">VIEW RELEASE ↗</i>
             </a>
             <a class="proof-card certificate-card" href="https://starseu.org/" target="_blank" rel="noreferrer">
               <span class="proof-label">STARS EU ALLIANCE</span>
-              <strong>VR/AR Development</strong>
-              <p>Created an AR video game and earned a STARS EU Alliance certificate in VR/AR game development.</p>
-              <i>ABOUT THE ALLIANCE ↗</i>
+              <strong data-i18n="ar.stars.title">VR/AR Development</strong>
+              <p data-i18n="ar.stars.copy">Created an AR video game and earned a STARS EU Alliance certificate in VR/AR game development.</p>
+              <i data-i18n="ar.stars.action">ABOUT THE ALLIANCE ↗</i>
             </a>
           </div>
         </article>
 
         <article class="chapter proof-chapter hardware-chapter" data-chapter="3">
-          <p class="chapter-index">04 / HARDWARE</p>
-          <h2>Code becomes<br /><em>physical.</em></h2>
-          <p class="chapter-copy">Complete Arduino systems combining environmental sensors, automation, storage, sound, and programmable lighting.</p>
+          <p class="chapter-index" data-i18n="hardware.index">04 / HARDWARE</p>
+          <h2 data-i18n-html="hardware.title">Code becomes<br /><em>physical.</em></h2>
+          <p class="chapter-copy" data-i18n="hardware.copy">Complete Arduino systems combining environmental sensors, automation, storage, sound, and programmable lighting.</p>
           <div class="chapter-tags"><span>ARDUINO</span><span>C++</span><span>ELECTRONICS</span></div>
           <div class="build-list" aria-label="Microcontroller projects">
             <div>
               <span>01 / ARDUINO UNO</span>
-              <strong>Automatic Plant Watering</strong>
-              <p>Automated watering with programmed light, temperature, humidity, and soil-moisture sensors.</p>
+              <strong data-i18n="hardware.plant.title">Automatic Plant Watering</strong>
+              <p data-i18n="hardware.plant.copy">Automated watering with programmed light, temperature, humidity, and soil-moisture sensors.</p>
             </div>
             <a href="https://budilify.com/" target="_blank" rel="noreferrer">
-              <span>02 / CUSTOM PRODUCT</span>
-              <strong>Budilify Alarm Clock</strong>
-              <p>7 MB memory for custom alarm sounds uploaded directly through a USB cable.</p>
-              <i>VIEW SITE ↗</i>
+              <span data-i18n="hardware.clock.label">02 / CUSTOM PRODUCT</span>
+              <strong data-i18n="hardware.clock.title">Budilify Alarm Clock</strong>
+              <p data-i18n="hardware.clock.copy">7 MB memory for custom alarm sounds uploaded directly through a USB cable.</p>
+              <i data-i18n="hardware.clock.action">VIEW SITE ↗</i>
             </a>
             <div>
               <span>03 / ARDUINO NANO</span>
-              <strong>Programmable RGB Lighting</strong>
-              <p>Custom control and effects for an addressable LED RGB light strip.</p>
+              <strong data-i18n="hardware.rgb.title">Programmable RGB Lighting</strong>
+              <p data-i18n="hardware.rgb.copy">Custom control and effects for an addressable LED RGB light strip.</p>
             </div>
           </div>
         </article>
@@ -139,24 +146,24 @@
             <i class="panel-corner corner-c" aria-hidden="true"></i>
             <i class="panel-corner corner-d" aria-hidden="true"></i>
             <div class="panel-content ai-content">
-              <p class="chapter-index">05 / APPLIED AI</p>
-              <h2>AI becomes part of<br /><em>the workflow.</em></h2>
-              <p class="chapter-copy ai-copy">I use AI as a practical development tool: accelerating prototypes, integrating intelligent tools into real workflows, and turning ideas into working products. This portfolio itself was created through an AI-assisted design and development process.</p>
+              <p class="chapter-index" data-i18n="ai.index">05 / APPLIED AI</p>
+              <h2 data-i18n-html="ai.title">AI becomes part of<br /><em>the workflow.</em></h2>
+              <p class="chapter-copy ai-copy" data-i18n="ai.copy">I use AI as a practical development tool: accelerating prototypes, integrating intelligent tools into real workflows, and turning ideas into working products. This portfolio itself was created through an AI-assisted design and development process.</p>
               <div class="proof-grid ai-proof-grid" aria-label="Applied AI proof of work">
                 <div class="proof-card ai-proof-card">
-                  <span class="proof-label">AI-ASSISTED DEVELOPMENT</span>
-                  <strong>This 3D Portfolio</strong>
-                  <p>Concept iteration, production code, responsive behavior, 3D integration, and testing shaped through an AI-assisted workflow.</p>
-                  <i>YOU ARE VIEWING IT NOW</i>
+                  <span class="proof-label" data-i18n="ai.portfolio.label">AI-ASSISTED DEVELOPMENT</span>
+                  <strong data-i18n="ai.portfolio.title">This 3D Portfolio</strong>
+                  <p data-i18n="ai.portfolio.copy">Concept iteration, production code, responsive behavior, 3D integration, and testing shaped through an AI-assisted workflow.</p>
+                  <i data-i18n="ai.portfolio.action">YOU ARE VIEWING IT NOW</i>
                 </div>
                 <a class="proof-card ai-proof-card" href="https://zovanion.vercel.app/landing.html" target="_blank" rel="noreferrer">
-                  <span class="proof-label">BETA / IN DEVELOPMENT</span>
+                  <span class="proof-label" data-i18n="ai.zovanion.label">BETA / IN DEVELOPMENT</span>
                   <strong>Zovanion</strong>
-                  <p>An AI SOP and policy generation platform, currently in beta and under active development.</p>
-                  <i>VIEW PLATFORM ↗</i>
+                  <p data-i18n="ai.zovanion.copy">An AI SOP and policy generation platform, currently in beta and under active development.</p>
+                  <i data-i18n="ai.zovanion.action">VIEW PLATFORM ↗</i>
                 </a>
               </div>
-              <div class="chapter-tags ai-tags"><span>AI INTEGRATION</span><span>WORKFLOW DESIGN</span><span>PROTOTYPING</span><span>PROMPT ENGINEERING</span></div>
+              <div class="chapter-tags ai-tags"><span data-i18n="ai.tag.integration">AI INTEGRATION</span><span data-i18n="ai.tag.workflow">WORKFLOW DESIGN</span><span data-i18n="ai.tag.prototype">PROTOTYPING</span><span data-i18n="ai.tag.prompt">PROMPT ENGINEERING</span></div>
             </div>
           </div>
         </article>
@@ -173,32 +180,32 @@
             <div class="panel-content">
               <div class="contact-heading">
                 <div>
-                  <p class="chapter-index">06 / NEXT PROJECT</p>
-                  <h2>Let’s build the<br /><em>interesting version.</em></h2>
+                  <p class="chapter-index" data-i18n="contact.index">06 / NEXT PROJECT</p>
+                  <h2 data-i18n-html="contact.title">Let’s build the<br /><em>interesting version.</em></h2>
                 </div>
-                <p class="chapter-copy">Have an idea somewhere between technology, 3D and creative experimentation?</p>
+                <p class="chapter-copy" data-i18n="contact.copy">Have an idea somewhere between technology, 3D and creative experimentation?</p>
               </div>
               <form class="contact-form" id="contactForm" novalidate>
                 <div class="form-row">
                   <label>
-                    <span>NAME</span>
-                    <input id="fieldName" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    <span data-i18n="contact.name">NAME</span>
+                    <input id="fieldName" name="name" type="text" autocomplete="name" placeholder="Your name" data-i18n-placeholder="contact.namePlaceholder" required />
                   </label>
                   <label>
-                    <span>EMAIL</span>
+                    <span data-i18n="contact.email">EMAIL</span>
                     <input id="fieldEmail" name="email" type="email" autocomplete="email" placeholder="your@email.com" required />
                   </label>
                 </div>
                 <label>
-                  <span>MESSAGE</span>
-                  <textarea id="fieldMessage" name="message" rows="3" placeholder="Tell me about your project..." required></textarea>
+                  <span data-i18n="contact.message">MESSAGE</span>
+                  <textarea id="fieldMessage" name="message" rows="3" placeholder="Tell me about your project..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
                 </label>
                 <label class="consent-row">
                   <input id="consent" type="checkbox" required />
-                  <span>I consent to sending my name, email, and message so I can be contacted. No data is stored on this website.</span>
+                  <span data-i18n="contact.consent">I consent to sending my name, email, and message so I can be contacted. No data is stored on this website.</span>
                 </label>
                 <div class="form-actions">
-                  <button class="chapter-cta" id="sendBtn" type="submit">SEND MESSAGE <span>↗</span></button>
+                  <button class="chapter-cta" id="sendBtn" type="submit"><span id="sendBtnText" data-i18n="contact.send">SEND MESSAGE</span><span>↗</span></button>
                   <p id="formStatus" role="status" aria-live="polite"></p>
                 </div>
               </form>
@@ -207,24 +214,24 @@
         </article>
       </div>
 
-      <aside class="journey-nav" aria-label="Journey progress">
-        <button class="journey-step active" data-jump="0" type="button" aria-label="Go to Web Development"><i></i><span>WEB</span></button>
-        <button class="journey-step" data-jump="1" type="button" aria-label="Go to Game Development"><i></i><span>GAMES</span></button>
-        <button class="journey-step" data-jump="2" type="button" aria-label="Go to AR Development"><i></i><span>AR</span></button>
-        <button class="journey-step" data-jump="3" type="button" aria-label="Go to Hardware"><i></i><span>HARDWARE</span></button>
-        <button class="journey-step" data-jump="4" type="button" aria-label="Go to Applied AI"><i></i><span>AI</span></button>
-        <button class="journey-step" data-jump="5" type="button" aria-label="Go to Contact"><i></i><span>CONTACT</span></button>
+      <aside class="journey-nav" aria-label="Journey progress" data-i18n-aria-label="aria.progress">
+        <button class="journey-step active" data-jump="0" type="button" aria-label="Go to Web Development" data-i18n-aria-label="nav.webAria"><i></i><span data-i18n="nav.web">WEB</span></button>
+        <button class="journey-step" data-jump="1" type="button" aria-label="Go to Game Development" data-i18n-aria-label="nav.gamesAria"><i></i><span data-i18n="nav.games">GAMES</span></button>
+        <button class="journey-step" data-jump="2" type="button" aria-label="Go to AR Development" data-i18n-aria-label="nav.arAria"><i></i><span>AR</span></button>
+        <button class="journey-step" data-jump="3" type="button" aria-label="Go to Hardware" data-i18n-aria-label="nav.hardwareAria"><i></i><span data-i18n="nav.hardware">HARDWARE</span></button>
+        <button class="journey-step" data-jump="4" type="button" aria-label="Go to Applied AI" data-i18n-aria-label="nav.aiAria"><i></i><span>AI</span></button>
+        <button class="journey-step" data-jump="5" type="button" aria-label="Go to Contact" data-i18n-aria-label="nav.contactAria"><i></i><span data-i18n="nav.contact">CONTACT</span></button>
         <div class="progress-line"><div id="progress-fill"></div></div>
       </aside>
 
       <div class="scroll-cue">
-        <span>SCROLL TO MOVE</span>
+        <span data-i18n="scroll.move">SCROLL TO MOVE</span>
         <div class="mouse"><i></i></div>
         <span id="progress-number">00%</span>
       </div>
 
       <div class="scene-label" aria-hidden="true">
-        <span>CAMERA Z</span>
+        <span data-i18n="camera.label">CAMERA Z</span>
         <b id="camera-depth">+06.0</b>
       </div>
     </main>
@@ -239,7 +246,7 @@
     </div>
 
     <noscript>
-      <div class="no-script">This portfolio journey needs JavaScript to render its 3D scenes.</div>
+      <div class="no-script" data-i18n="noscript">This portfolio journey needs JavaScript to render its 3D scenes.</div>
     </noscript>
 
   </body>
