@@ -1,0 +1,198 @@
+/* ============================================================
+   POLISH LAYER — additive refinements on top of the app styles
+   (safe to port back into the source project as-is)
+   ============================================================ */
+
+/* ---- type rendering ---- */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-kerning: normal;
+}
+
+/* counters shouldn't jitter as digits change */
+#progress-number,
+#camera-depth,
+.chapter-index,
+.proof-label {
+  font-variant-numeric: tabular-nums;
+}
+
+.chapter-copy {
+  text-wrap: pretty;
+}
+
+/* ---- selection ---- */
+::selection {
+  background: rgba(0, 229, 255, 0.28);
+  color: #eafcff;
+}
+html[data-theme="light"] ::selection {
+  background: rgba(0, 111, 130, 0.24);
+  color: #07242c;
+}
+
+/* ---- themed scrollbar ---- */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 229, 255, 0.45) #070b10;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #070b10;
+  border-left: 1px solid rgba(219, 241, 244, 0.08);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 229, 255, 0.55),
+    rgba(155, 108, 255, 0.5)
+  );
+  border: 2px solid #070b10;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 229, 255, 0.85),
+    rgba(155, 108, 255, 0.8)
+  );
+}
+html[data-theme="light"] {
+  scrollbar-color: rgba(0, 111, 130, 0.55) #dde7ec;
+}
+html[data-theme="light"] ::-webkit-scrollbar-track {
+  background: #dde7ec;
+  border-left: 1px solid rgba(25, 57, 70, 0.12);
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 111, 130, 0.65),
+    rgba(96, 56, 186, 0.55)
+  );
+  border-color: #dde7ec;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #006f82, #6038ba);
+}
+
+/* ---- touch niceties ---- */
+a,
+button,
+.journey-step,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ============================================================
+   MICRO-INTERACTIONS (pointer devices only)
+   ============================================================ */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* light sweep across project cards on hover */
+  a.proof-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      115deg,
+      transparent 32%,
+      rgba(235, 251, 255, 0.07) 47%,
+      rgba(0, 229, 255, 0.05) 52%,
+      transparent 66%
+    );
+    transform: translateX(-130%);
+    transition: transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  a.proof-card:hover::after {
+    transform: translateX(130%);
+  }
+  html[data-theme="light"] a.proof-card::after {
+    background: linear-gradient(
+      115deg,
+      transparent 32%,
+      rgba(255, 255, 255, 0.55) 47%,
+      rgba(0, 111, 130, 0.08) 52%,
+      transparent 66%
+    );
+  }
+
+  /* arrows lean into their direction */
+  .contact-link span:last-child,
+  .chapter-cta span:last-child,
+  .proof-card i,
+  .build-list i {
+    transition: transform 0.22s ease;
+  }
+  .contact-link:hover span:last-child {
+    transform: translate(2px, 2px);
+  }
+  .chapter-cta:hover span:last-child {
+    transform: translate(3px, -3px);
+  }
+  a.proof-card:hover i,
+  .build-list > a:hover i {
+    transform: translateX(3px);
+  }
+
+  /* brand block */
+  .brand span {
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .brand:hover span {
+    background: #e9fdff;
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+  }
+  html[data-theme="light"] .brand:hover span {
+    background: #005b6a;
+    box-shadow: none;
+  }
+
+  /* tag chips acknowledge the cursor */
+  .chapter-tags span {
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .chapter-tags span:hover {
+    border-color: rgba(0, 229, 255, 0.5);
+    color: #c9d9e1;
+  }
+  html[data-theme="light"] .chapter-tags span:hover {
+    border-color: rgba(0, 111, 130, 0.55);
+    color: #1c3540;
+  }
+
+  /* journey nav: preview state before commit */
+  .journey-step {
+    transition: color 0.2s;
+  }
+  .journey-step:hover {
+    color: #9fb2bc;
+  }
+  .journey-step:hover i {
+    border-color: var(--cyan);
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.45);
+  }
+  .journey-step.active:hover {
+    color: var(--cyan);
+  }
+  html[data-theme="light"] .journey-step:hover {
+    color: #3c545f;
+  }
+}
+
+/* keyboard focus for the journey nav (was missing) */
+.journey-step:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+/* ---- reduced motion: stop looping animations ---- */
+@media (prefers-reduced-motion: reduce) {
+  .mouse i {
+    animation: none;
+    opacity: 0.85;
+  }
+}

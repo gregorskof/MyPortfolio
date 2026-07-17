@@ -1,49 +1,125 @@
 <!doctype html>
-<html data-beasties-container>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <title>About me - Gregor</title>
-    <base href="https://gregorskof.github.io/MyPortfolio/">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <style>*{line-height:1.8;font-family:monospace;font-size:large;transition:all .3s ease;scroll-behavior:smooth}html,header,body,footer{padding:0;margin:0;overflow-x:hidden}header{display:flex;justify-content:space-evenly;position:fixed;top:0;width:100%;z-index:1;background-color:#0006!important;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 5px 5px #0004}header,footer,.mobileHeader{padding:5px 0;text-align:center;color:#32cd32;background-color:#222}.mobileHeader{display:none}ul{display:flex;gap:25px;justify-content:space-evenly;list-style-type:none}#navLink,li{color:#fff;text-decoration:none}#navLink:hover,li:hover{color:#32cd32;text-decoration:underline;text-shadow:0 0 5px limegreen;transform:translateY(-2px)}#navLink:active,li:active{color:gray;text-decoration:none;transform:translateY(0)}@media (max-width: 840px){header{display:grid;gap:0px}}@media (max-width: 760px){ul{width:75%;margin:auto}}@media (max-width: 640px){#navLink{font-size:medium}}@media (max-width: 550px){header{display:none}.mobileHeader{display:flex;flex-direction:column;font-size:larger;gap:5px}#navLink{font-size:larger}}</style><link rel="stylesheet" href="styles-DHKHKXPV.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-DHKHKXPV.css"></noscript></head>
-  <header>
-    <h1 id="title"><a href="index.html" style="text-decoration: none; color: limegreen; font-size: larger;">
-      MY PORTFOLIO
-    </a></h1>
-    <ul>
-      <li><a href="#webDevelopment" id="navLink">Web</a></li>
-      <li><a href="#winAppDevelopment" id="navLink">Windows apps</a></li>
-      <li><a href="#gameDevelopment" id="navLink">Games</a></li>
-      <li><a href="#mcProgramming" id="navLink">MC programming</a></li>
-      <li><a href="#otherExperiences" id="navLink">Other experiences</a></li>
-      <li><a href="#contact" id="navLink">Contact</a></li>
-    </ul>
-  </header>
-  <div class="mobileHeader">
-    <h1 id="title"><a href="index.html" style="text-decoration: none; color: limegreen; font-size: larger;">
-      MY PORTFOLIO
-    </a></h1>
-    <ul>
-      <div>
-        <li><a href="#webDevelopment" id="navLink">Web</a></li>
-        <li><a href="#winAppDevelopment" id="navLink">Windows apps</a></li>
-        <li><a href="#gameDevelopment" id="navLink">Games</a></li>
-      </div>
-      <div>
-        <li><a href="#mcProgramming" id="navLink">MC programming</a></li>
-        <li><a href="#otherExperiences" id="navLink">Other experiences</a></li>
-        <li><a href="#contact" id="navLink">Contact</a></li>
-      </div>
-    </ul>
-  </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <meta http-equiv="refresh" content="6;url=https://gregorskof.github.io/MyPortfolio/" />
+    <title>404 — Gregor Škof</title>
+    <link rel="icon" type="image/svg+xml" href="/MyPortfolio/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/MyPortfolio/favicon.ico" />
+    <script>
+      try {
+        if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light';
+      } catch (e) {}
+    </script>
+    <style>
+      @font-face {
+        font-family: "Space Mono"; font-style: normal; font-weight: 400; font-display: swap;
+        src: url("/MyPortfolio/fonts/space-mono-latin-400-normal.woff2") format("woff2");
+      }
+      @font-face {
+        font-family: "Syne"; font-style: normal; font-weight: 800; font-display: swap;
+        src: url("/MyPortfolio/fonts/syne-latin-800-normal.woff2") format("woff2");
+      }
+      :root {
+        --cyan: #00e5ff; --text: #eff7f8; --muted: #788895;
+        --bg: #05080c; --line: rgba(219, 241, 244, 0.17);
+      }
+      html[data-theme="light"] {
+        --cyan: #006f82; --text: #101b23; --muted: #3f5662;
+        --bg: #eaf1f4; --line: rgba(25, 57, 70, 0.2);
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
+      body {
+        margin: 0; display: grid; place-items: center;
+        background: var(--bg); color: var(--text);
+        font-family: "Space Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        background-image:
+          linear-gradient(rgba(0, 229, 255, 0.05) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 229, 255, 0.05) 1px, transparent 1px);
+        background-size: 34px 34px;
+      }
+      html[data-theme="light"] body {
+        background-image:
+          linear-gradient(rgba(0, 111, 130, 0.07) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0, 111, 130, 0.07) 1px, transparent 1px);
+      }
+      main {
+        position: relative; max-width: 560px; width: calc(100% - 48px);
+        padding: clamp(30px, 6vw, 54px); text-align: left;
+        border: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent);
+      }
+      .corner { position: absolute; width: 15px; height: 15px; }
+      .corner::before, .corner::after {
+        content: ""; position: absolute; background: var(--cyan);
+        box-shadow: 0 0 9px rgba(0, 229, 255, 0.6);
+      }
+      html[data-theme="light"] .corner::before, html[data-theme="light"] .corner::after { box-shadow: none; }
+      .corner::before { width: 15px; height: 1px; }
+      .corner::after { width: 1px; height: 15px; }
+      .ca { top: -1px; left: -1px; }
+      .cb { top: -1px; right: -1px; transform: rotate(90deg); }
+      .cc { bottom: -1px; right: -1px; transform: rotate(180deg); }
+      .cd { bottom: -1px; left: -1px; transform: rotate(270deg); }
+      .eyebrow { margin: 0 0 18px; color: var(--cyan); font-size: 11px; letter-spacing: 0.18em; }
+      h1 {
+        margin: 0; font-family: Syne, sans-serif; font-weight: 800;
+        font-size: clamp(84px, 18vw, 132px); line-height: 0.88; letter-spacing: -0.05em;
+        color: transparent; -webkit-text-stroke: 2px var(--cyan);
+      }
+      h2 {
+        margin: 14px 0 0; font-family: Syne, sans-serif; font-weight: 800;
+        font-size: clamp(22px, 4.4vw, 30px); letter-spacing: -0.03em;
+      }
+      p.copy { margin: 18px 0 26px; color: var(--muted); font-size: 13px; line-height: 1.75; }
+      .row { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+      a.cta {
+        min-height: 52px; padding: 0 18px; display: inline-flex; align-items: center; gap: 22px;
+        color: #001014; background: var(--cyan); text-decoration: none;
+        font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+        transition: transform 0.2s, filter 0.2s;
+      }
+      html[data-theme="light"] a.cta { color: #fff; }
+      a.cta:hover { transform: translateY(-2px); filter: brightness(1.12); }
+      a.cta:focus-visible { outline: 2px solid var(--cyan); outline-offset: 3px; }
+      .count { color: var(--muted); font-size: 10px; letter-spacing: 0.14em; font-variant-numeric: tabular-nums; }
+      .count b { color: var(--cyan); font-weight: 400; }
+      @media (prefers-reduced-motion: reduce) { a.cta { transition: none; } }
+    </style>
+  </head>
   <body>
-    <app-root></app-root>
-  <script src="polyfills-B6TNHZQ6.js" type="module"></script><script src="main-2OC52SVK.js" type="module"></script></body>
-  <footer>
-    <p>
-      &copy; Made by Gregor <i>(Author)</i> - 2025<br>
-      All rights reserved!
-    </p>
-  </footer>
+    <main>
+      <i class="corner ca"></i><i class="corner cb"></i><i class="corner cc"></i><i class="corner cd"></i>
+      <p class="eyebrow" id="eyebrow">ERROR / COORDINATE NOT FOUND</p>
+      <h1>404</h1>
+      <h2 id="headline">Lost in the void.</h2>
+      <p class="copy" id="copy">This point doesn't exist on the journey. Returning you to the start of the experience.</p>
+      <div class="row">
+        <a class="cta" href="https://gregorskof.github.io/MyPortfolio/"><span id="ctaText">RETURN TO THE JOURNEY</span> <span>↗</span></a>
+        <p class="count"><span id="countLabel">AUTO-REDIRECT IN</span> <b id="n">5</b>s</p>
+      </div>
+    </main>
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('portfolio-language') === 'sl') {
+            document.documentElement.lang = 'sl';
+            document.getElementById('eyebrow').textContent = 'NAPAKA / KOORDINATA NE OBSTAJA';
+            document.getElementById('headline').textContent = 'Izgubljeni v praznini.';
+            document.getElementById('copy').textContent = 'Ta točka na popotovanju ne obstaja. Vračam vas na začetek izkušnje.';
+            document.getElementById('ctaText').textContent = 'NAZAJ NA POPOTOVANJE';
+            document.getElementById('countLabel').textContent = 'PREUSMERITEV ČEZ';
+          }
+        } catch (e) {}
+        var n = 5, el = document.getElementById('n');
+        var t = setInterval(function () {
+          n -= 1;
+          if (n <= 0) { clearInterval(t); location.replace('https://gregorskof.github.io/MyPortfolio/'); return; }
+          el.textContent = n;
+        }, 1000);
+      })();
+    </script>
+  </body>
 </html>

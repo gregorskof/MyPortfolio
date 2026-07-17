@@ -3,18 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Gregor Škof — an immersive 3D portfolio journey." />
-    <link rel="icon" type="image/x-icon" href="./assets/favicon-DT2e6sLL.ico" />
+    <meta name="description" content="Gregor Škof — an immersive 3D portfolio journey through web, game, AR, hardware, and AI projects." />
+    <meta name="author" content="Gregor Škof" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="theme-color" id="metaThemeColor" content="#05080c" />
     <title>Gregor Škof — Into the Work</title>
+
+    <link rel="canonical" href="https://gregorskof.github.io/MyPortfolio/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gregor Škof — Portfolio" />
+    <meta property="og:title" content="Gregor Škof — Into the Work" />
+    <meta property="og:description" content="An immersive, scroll-driven 3D portfolio journey through web, game, AR, hardware, and AI projects." />
+    <meta property="og:url" content="https://gregorskof.github.io/MyPortfolio/" />
+    <meta property="og:image" content="https://gregorskof.github.io/MyPortfolio/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Gregor Škof — Into the Work" />
+    <meta name="twitter:description" content="An immersive, scroll-driven 3D portfolio journey." />
+    <meta name="twitter:image" content="https://gregorskof.github.io/MyPortfolio/og-image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" sizes="16x16 32x32 48x48" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+
     <script>
       try {
-        if (localStorage.getItem('portfolio-theme') === 'light') document.documentElement.dataset.theme = 'light';
+        if (localStorage.getItem('portfolio-theme') === 'light') {
+          document.documentElement.dataset.theme = 'light';
+          document.getElementById('metaThemeColor')?.setAttribute('content', '#eaf1f4');
+        }
       } catch (error) {}
     </script>
+
+    <link rel="preload" href="./fonts/syne-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/space-mono-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./fonts.css" />
     <script type="module" crossorigin src="./assets/index-DBRyBT3_.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BbU9xiwQ.css">
+    <link rel="stylesheet" href="./polish.css" />
+    <script src="./polish.js" defer></script>
+
+    <style>
+      /* boot loader — inlined so it paints before any stylesheet arrives */
+      #boot{position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;background:#05080c;font-family:"Space Mono",ui-monospace,SFMono-Regular,Menlo,monospace;transition:opacity .45s ease;}
+      #boot.done{opacity:0;pointer-events:none;}
+      #boot .boot-brand{min-width:112px;height:39px;padding:0 13px;display:grid;place-items:center;color:#001014;background:#00e5ff;font-family:Syne,"Space Mono",sans-serif;font-size:13px;font-weight:800;letter-spacing:-.02em;}
+      #boot .boot-track{position:relative;width:min(228px,60vw);height:1px;background:rgba(219,241,244,.16);overflow:hidden;}
+      #boot .boot-track i{position:absolute;top:0;left:0;width:38%;height:100%;background:linear-gradient(90deg,transparent,#00e5ff);box-shadow:0 0 10px rgba(0,229,255,.7);animation:bootsweep 1.1s cubic-bezier(.45,.05,.55,.95) infinite;}
+      @keyframes bootsweep{0%{transform:translateX(-110%)}100%{transform:translateX(370%)}}
+      #boot .boot-status{color:#687984;font-size:9px;letter-spacing:.16em;}
+      html[data-theme="light"] #boot{background:#eaf1f4;}
+      html[data-theme="light"] #boot .boot-brand{color:#fff;background:#006f82;}
+      html[data-theme="light"] #boot .boot-track{background:rgba(25,57,70,.18);}
+      html[data-theme="light"] #boot .boot-track i{background:linear-gradient(90deg,transparent,#006f82);box-shadow:none;}
+      html[data-theme="light"] #boot .boot-status{color:#5d727d;}
+      @media (prefers-reduced-motion: reduce){
+        #boot{transition:none;}
+        #boot .boot-track i{animation:none;width:100%;background:#00e5ff;opacity:.6;}
+      }
+    </style>
   </head>
   <body>
+    <div id="boot" role="status" aria-live="polite">
+      <div class="boot-brand">MyPortfolio</div>
+      <div class="boot-track" aria-hidden="true"><i></i></div>
+      <p class="boot-status">LOADING 3D SCENES</p>
+    </div>
+    <script>
+      (function () {
+        var boot = document.getElementById('boot');
+        if (!boot) return;
+        try {
+          if (localStorage.getItem('portfolio-language') === 'sl')
+            boot.querySelector('.boot-status').textContent = 'NALAGANJE 3D SCEN';
+        } catch (e) {}
+        var t0 = performance.now();
+        var gone = false;
+        function hide() {
+          if (gone) return;
+          gone = true;
+          var fast = performance.now() - t0 < 250;
+          var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if (fast || reduce) { boot.remove(); return; }
+          boot.classList.add('done');
+          boot.addEventListener('transitionend', function () { boot.remove(); }, { once: true });
+          setTimeout(function () { boot.remove(); }, 700);
+        }
+        if (document.readyState === 'complete') hide();
+        else window.addEventListener('load', hide, { once: true });
+        setTimeout(hide, 12000);
+      })();
+    </script>
     <header class="topbar">
       <a class="brand" href="#top" aria-label="Return to the beginning" data-i18n-aria-label="aria.top">
         <span>MyPortfolio</span>
