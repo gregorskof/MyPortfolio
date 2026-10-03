@@ -1,0 +1,52 @@
+/* RoundSelect V2 — MyPortfolio's existing cyan selection, with SVG rounding.
+   This file intentionally loads AFTER polish.css; keep native highlights as fallback.
+   Colors match the original ::selection in polish.css exactly. */
+:root {
+  --portfolio-selection-bg: rgba(0, 229, 255, 0.28);
+  --portfolio-selection-text: #eafcff;
+}
+html[data-theme="light"] {
+  --portfolio-selection-bg: rgba(0, 111, 130, 0.24);
+  --portfolio-selection-text: #07242c;
+}
+
+/* This also gives 404.html the same default selection as the main portfolio. */
+::selection {
+  background: var(--portfolio-selection-bg);
+  color: var(--portfolio-selection-text);
+}
+
+/* Only suppress the native highlight once SVG geometry exists. Keep original
+   element text color so dark and light themes both remain readable. */
+html.rounded-selection-enabled ::selection {
+  background: transparent !important;
+  color: currentColor !important;
+}
+/* Never replace the browser's selection behavior for editable controls. */
+html.rounded-selection-enabled :is(input, textarea, select, [contenteditable])::selection {
+  background: Highlight !important;
+  color: HighlightText !important;
+}
+.rounded-selection-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2147483647;
+  overflow: visible;
+  pointer-events: none;
+  user-select: none;
+}
+.rounded-selection-shape {
+  /* The palette colors already contain alpha: don't reduce opacity again. */
+  fill: var(--highlight-color, var(--portfolio-selection-bg));
+  pointer-events: none;
+}
+/* Preserve touch-selection handles and OS high-contrast highlighting. */
+@media (hover: none) and (pointer: coarse), (forced-colors: active) {
+  .rounded-selection-overlay { display: none !important; }
+  html.rounded-selection-enabled ::selection {
+    background: Highlight !important;
+    color: HighlightText !important;
+  }
+}
